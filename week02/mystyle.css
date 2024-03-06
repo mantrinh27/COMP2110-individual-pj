@@ -1,0 +1,45 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+}
+
+.header-footer {
+    background-color: lightskyblue;
+}
+
+.header-footer p {
+    font-style: normal;
+}
+
+#units-table {
+    border-collapse: collapse;
+}
+
+#units-table th {
+    background-color:skyblue;
+}
+
+#units-table th, td {
+    border: 1px solid skyblue;
+}
+
+.media {
+    border-style: solid;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.media video, img, figcaption{
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.media h4 {
+    text-align: center;
+}
