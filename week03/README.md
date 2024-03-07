@@ -14,4 +14,14 @@
     - If they want to re-design the webpage such as putting the products into one category and having drop down option on the webpage.
     - If the client wants to fix their products' images.
 
+# VSCode Live Server and HTTP
+# HTTP status messages
+1xx: Information
+100 Continue
+200 OK
+300 Mutiple Choices
+400 Bad request
+500 Internal Server Error
+
+It's not always '200 OK'
 
