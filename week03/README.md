@@ -24,4 +24,8 @@
 500 Internal Server Error
 
 It's not always '200 OK'
-
+# HTTP request methods
+    - GET is used to request data from a specified resource.
+    - POST is used to send data to a server to create/update a resource
+    -PUT is used to send data to a server to create/ update a resource.
+# CSS Zen Garden
