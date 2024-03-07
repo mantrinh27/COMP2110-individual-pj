@@ -3,12 +3,15 @@ body {
 }
 
 h1 {
-    color:white;
+    color:skyblue;
+    text-align: center;
+}
+p {
     text-align: center;
 }
 
 .header-footer {
-    background-color: lightskyblue;
+    background-color: white;
 }
 
 .header-footer p {
@@ -34,7 +37,6 @@ h1 {
 }
 
 .media video, img, figcaption{
-    border-radius: 50px;
     display: block;
     margin: 0 auto;
     text-align: center;
