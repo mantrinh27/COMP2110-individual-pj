@@ -1,7 +1,7 @@
 
 // a list of book objects
 const allBooks = {
-    "books": [
+    books: [
       {
         "id": 8,
         "author": "Chinua Achebe",
@@ -134,23 +134,37 @@ const allBooks = {
         "title": "Ficciones",
         "year": 1965
       }
-    ]
+    ],  // need to have a comma after square bracket
   };
 
 // a function to generate a display of all of the books
 // in an array
-const renderBooks = (bookArray) => {
 
+const renderBooks = (bookArray, id) => {
+  console.log('entered function');
+  const target = document.getElementById(id);
+  console.log('entered function');
+  let list = "<ul>";
+  for (let i=0; i<bookArray.length; i++) {
+    list += `<li>${bookArray[i].title} by <em> ${bookArray[i].author}
+    <img class = "bookcover" src="${bookArray[i].imageLink}" alt = " Book cove page" 
+    </li>`;
+  }
+  list += "</ul>";
+  target.innerHTML = list;
 };
 
 // an event handler for the control button
+const renderdetailedView = (bookArray2, id) => {
+  
+}
 document.getElementById('control').onclick = (event) => {
     console.log('control button clicked');
 };
 
 
 window.onload = () => {
-    renderBooks(allBooks);
+    renderBooks(allBooks, 'content');
 };
 
 
