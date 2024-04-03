@@ -1,0 +1,35 @@
+<sw-film url="https://swapi.dev/api/films/1/"></sw-film>
+
+<script>
+  class SWFilm extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+      const url = this.getAttribute('url');
+      if (url) {
+        fetch(url)
+          .then(response => response.json())
+          .then(data => this.render(data))
+          .catch(error => console.error('Error fetching film data:', error));
+      }
+    }
+
+    render(film) {
+      const characters = film.characters.map(characterUrl =>
+        `<sw-character url="${characterUrl}"></sw-character>`
+      ).join('');
+
+      const content = `
+        <h2>${film.title}</h2>
+        <div>${characters}</div>
+      `;
+
+      this.shadowRoot.innerHTML = content;
+    }
+  }
+
+  window.customElements.define('sw-film', SWFilm);
+</script>
