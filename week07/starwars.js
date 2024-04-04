@@ -4,9 +4,22 @@ class StarWars extends LitElement {
 
     static properties = {
         film: {type: String},
-        _data: {state: true}
+        _data: {state: true},
+        _characters: {state: true}
     }
     static styles = css`
+
+    .characters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    sw-character {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 5px;
+    }
+
     .crawl {
         margin: auto;
         text-align: center;
@@ -22,6 +35,7 @@ class StarWars extends LitElement {
         super();
         this.film = "1";
         this._films = [1, 2, 3, 4, 5, 6]
+        this._character = [];
     }
 
     connectedCallback() {
@@ -61,6 +75,14 @@ class StarWars extends LitElement {
             <h2>${this._data.title}</h2>
             <p>Directed by: ${this._data.director}</p>
             
+            <h3>Characters</h3>
+            
+            <div class = "characters">
+            ${this._data.characters.map(url => {
+                return html `<sw-character url ="${url}"></sw-character>`;
+            })} 
+            </div>
+
             <div class='crawl'>${crawl.map(line => html`<p>${line}</p>`)}</div>`;
         } else {
             return html`<p>Loading...${this.film}</p>`;
@@ -70,3 +92,24 @@ class StarWars extends LitElement {
 }
 
 customElements.define('star-wars', StarWars);
+class StarWarsCharacter extends LitElement {
+    static properties = {
+        url: {},
+        _data: {state: true}
+    }
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        /*get the character data from API*/
+        if (this.url) {
+            fetch(this.url)
+            .then(response => response.json())
+            .then(data => {
+                this._data = data
+            })
+        }
+    }
+
+}
