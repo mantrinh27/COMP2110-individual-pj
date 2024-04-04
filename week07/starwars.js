@@ -12,14 +12,13 @@ class StarWars extends LitElement {
     .characters {
         display: flex;
         flex-wrap: wrap;
+        
     }
-    
     sw-character {
         border: 1px solid black;
         margin: 10px;
         padding: 5px;
     }
-
     .crawl {
         margin: auto;
         text-align: center;
@@ -112,4 +111,13 @@ class StarWarsCharacter extends LitElement {
         }
     }
 
+    render() {
+        if(this._data) {
+            console.log('render', this._data)
+            return html`<h2>${this._data.name}</h2>
+            <p>Height: ${this._data.height}</p>
+            `;
+        }
+    }
 }
+customElements.define('sw-character', StarWarsCharacter);
