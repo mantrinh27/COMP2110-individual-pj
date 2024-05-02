@@ -33,11 +33,6 @@ On task 2, I chose Mecca website: https://www.mecca.com/en-au/
 
 to experiment its layout using Chrome and Safari on my personal mobile device.
 
-
-Responsive vs Adaptive approach
-- Responsive approach: not changing the layout when scaling the desktop browsers.
-
-- Adaptive: Has different layout/ design for different devices. 
 - How are they displayed with different browser window sizes on different devices? What are the differences?
 Do they largely follow a responsive or adaptive design approach?
 How many contents can be accessed using just a thumb? Is any other gesture required (refer to the hold and touch gesture figure in The Fundamental Guide to Mobile Usability)? You can use your mobile phone to practise.
@@ -50,6 +45,11 @@ Put Content First
 Stay on (Touch) Target
 Echo Real-world Gestures and Movement
 Use Progressive Disclosure
+
+- Personal note: Responsive vs Adaptive approach
+- Responsive approach: not changing the layout when scaling the desktop browsers.
+
+- Adaptive: Has different layout/ design for different devices. 
 
 # Task 3 Responsive Navigation Bar With Flexbox
 
