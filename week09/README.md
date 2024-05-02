@@ -2,7 +2,6 @@
 
 # Task 1
 
-
 Mobile design usability is as much as important in the way it feels and the way it looks toward end-users. The increasing of mobile users has led industrial design and human factors into consideration for building mobile usability. This requires UX designers to gain more knowledge of how the user physically experiences an app.
 
 How People Use Mobile Devices
@@ -35,7 +34,6 @@ On task 2, I chose Mecca website: https://www.mecca.com/en-au/
 to experiment its layout using Chrome and Safari on my personal mobile device.
 
 
-
 Responsive vs Adaptive approach
 - Responsive approach: not changing the layout when scaling the desktop browsers.
 
@@ -53,6 +51,6 @@ Stay on (Touch) Target
 Echo Real-world Gestures and Movement
 Use Progressive Disclosure
 
-# Task 3
+# Task 3 Responsive Navigation Bar With Flexbox
 
 
