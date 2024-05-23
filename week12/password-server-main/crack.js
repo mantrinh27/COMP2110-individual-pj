@@ -35,7 +35,7 @@ const bruteForce = (iterations, hash, salt) => {
 
     for(let i=0; i<iterations; i++) { 
         const password = generatePassword(i);
-        const hashedPassword = hashPassword(password, salt);
+        const hashedPassword = sha256Hash(password, salt);
         if (hashedPassword === hash) {
             console.log("Password found: " + password)
             return password;
@@ -45,8 +45,8 @@ const bruteForce = (iterations, hash, salt) => {
 
 
 // Enter your captured hash and salt here
-hash = "";
-salt = ""
+hash = "9a8a82f715de7bfd31ef8adc9f97c972350698b1b65369cab9f5385f376e096650cbb752ed89dccdc3330a46bb71d5d10ee813c2f7f9c7abca5ee7a72a0510a3";
+salt = "835982396450c676ae5975a90154eb47"
 iterations = 100;
 console.time('bruteForce ' + iterations );
 bruteForce(iterations, hash, salt);

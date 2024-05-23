@@ -15,10 +15,16 @@ const data = {
 };
 
 // function to create a password hash using PBKDF2
-const hashPassword = (password, salt) => {
-    const key = crypto.pbkdf2Sync(password, salt, 100000, 64, 'sha512');
-    return key.toString('hex');
-}
+// const hashPassword = (password, salt) => {
+//     const key = crypto.pbkdf2Sync(password, salt, 100000, 64, 'sha512');
+//     return key.toString('hex');
+// }
+
+const sha256Hash = (password, salt) => {
+    const hash = crypto.createHash('sha256');
+    hash.update(password + salt);
+    return hash.digest('hex');
+};
 
 app.get('/users', (req, res) => {
     res.send(data.users);
@@ -32,7 +38,7 @@ app.post('/login', (req, res) => {
         res.status(401).send({success: false, error: 'Invalid Username or Password'});
         return;
     }
-    const hashedPassword = hashPassword(password, user.salt);
+    const hashedPassword = sha256Hash(password, user.salt);
     if (user.password !== hashedPassword) {
         res.status(401).send({success: false, error: 'Invalid Username or Password'});
         return;
@@ -47,7 +53,7 @@ app.post('/register', (req, res) => {
         res.status(400).send({success: false, error: 'Passwords do not match'});
     } else {
         const salt = crypto.randomBytes(16).toString('hex');
-        const hashedPassword = hashPassword(password, salt);
+        const hashedPassword = sha256Hash(password, salt);
         data.users.push({
             username,
             password: hashedPassword,
